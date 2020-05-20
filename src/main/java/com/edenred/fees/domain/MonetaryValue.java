@@ -17,6 +17,8 @@ public class MonetaryValue implements Serializable {
 
 	public static final BigDecimal ONE_HUNDRED = new BigDecimal(100);
 	
+	private static final Currency GBP = Currency.getInstance("GBP");
+	
 	@Getter
 	@NonNull
 	private Currency currency;
@@ -25,7 +27,7 @@ public class MonetaryValue implements Serializable {
 	private BigDecimal amount;
 
 	public static MonetaryValue emptyGBP() {
-		return new MonetaryValue(Currency.getInstance("GBP"), BigDecimal.ZERO);
+		return new MonetaryValue(GBP, BigDecimal.ZERO);
 	}
 
 	public MonetaryValue add(double value) {
